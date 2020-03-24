@@ -1,4 +1,5 @@
 # LinkedIn_graph_search
+
 #this project is a java application written in portuguese
 #includes javafx graphical part ( show of graphs entities and weights)
 

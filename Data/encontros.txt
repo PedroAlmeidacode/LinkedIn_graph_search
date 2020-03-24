@@ -1,0 +1,4 @@
+nparticipantes;nome;idencontro;xenc;yenc;nomemepcriadora;tipoec;idec;xec;yec;dia/mes/ano/hora/minuto;idprofissionais,...,;
+1;evento;0;2.0;12.0;google;software;0;2.0;12.0;2016/5/19/2/58;0,;
+1;convencao;1;23.0;2.0;google;software;0;2.0;12.0;2014/4/22/5/3;0,;
+2;reuniao;2;12.0;3.0;Microsoft;disto;1;2.0;3.0;2016/12/11/12/34;1,2,;

@@ -1,0 +1,5 @@
+nomeempre;tipoempres;idem;xemp;yemp;idprofissionalextrabalhador,...;idprofessionalseguidor,...,...;professionaisseguidos,..,..;
+google;software;0;2.0;12.0;null;null;0,;
+Microsoft;disto;1;2.0;3.0;null;null;0,1,;
+blip;tecnologia;2;12.0;3.0;null;null;null;
+Yahoo;coisas;3;23.0;2.0;null;null;null;

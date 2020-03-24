@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="primeirafase.MenuJavaFXMLController">
+   <children>
+      <MenuBar layoutY="3.0" prefHeight="39.0" prefWidth="200.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleLoadButtonAction" text="Load from txt" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleSaveButtonAction" text="Save to txt" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleLoadBDandGraphs" text="Load bd and graphs" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleClearButtonAction" text="Clear" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TabPane layoutY="34.0" prefHeight="568.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Grafos">
+               <content>
+                  <TabPane prefHeight="521.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+                     <tabs>
+                        <Tab text="Caminhos">
+                           <content>
+                              <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="Graph">
+                                       <content>
+                                          <Group fx:id="graphGroupCaminhos" />
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Manual">
+                                       <content>
+                                          <GridPane>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <TextField fx:id="verticesNumberFieldCaminhos" promptText="3" GridPane.columnIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </GridPane.margin>
+                                                   <effect>
+                                                      <InnerShadow />
+                                                   </effect></TextField>
+                                                <TextArea fx:id="edgesNumberFieldCaminhos" prefHeight="200.0" prefWidth="200.0" promptText="0;1;0.22" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </GridPane.margin>
+                                                   <effect>
+                                                      <InnerShadow />
+                                                   </effect></TextArea>
+                                                <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleCreateButtonCaminhosAction" prefHeight="68.0" prefWidth="221.0" text="Create" textFill="#1a1a1b" GridPane.rowIndex="2">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="100.0" left="100.0" right="100.0" top="100.0" />
+                                                   </GridPane.margin>
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                   <effect>
+                                                      <DropShadow />
+                                                   </effect>
+                                                </Button>
+                                                <Label alignment="CENTER" prefHeight="38.0" prefWidth="245.0" text="Número vértices" textFill="#141414">
+                                                   <font>
+                                                      <Font name="System Bold" size="24.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets bottom="100.0" left="100.0" right="100.0" top="100.0" />
+                                                   </GridPane.margin>
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                </Label>
+                                                <Label alignment="CENTER" prefHeight="35.0" prefWidth="199.0" text="Edges" textAlignment="CENTER" textFill="#1e1e1e" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="24.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets bottom="100.0" left="100.0" right="100.0" top="100.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                             </children>
+                                          </GridPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Editar">
+                                       <content>
+                                          <GridPane>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <TextField fx:id="removeCaminhoNodeTextField" promptText="3" GridPane.rowIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="60.0" left="60.0" right="60.0" top="60.0" />
+                                                   </GridPane.margin>
+                                                   <effect>
+                                                      <InnerShadow />
+                                                   </effect>
+                                                </TextField>
+                                                <Button mnemonicParsing="false" onAction="#handleRemoveCaminhoAction" prefHeight="68.0" prefWidth="151.0" text="Remove" GridPane.rowIndex="2">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                                   </GridPane.margin>
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                   <effect>
+                                                      <DropShadow />
+                                                   </effect>
+                                                </Button>
+                                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="42.0" prefWidth="196.0" text="Remover nó" textFill="#1b1a1a">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <Label alignment="CENTER" prefHeight="36.0" prefWidth="259.0" text="Remover ligação" textFill="#1b1a1a" GridPane.columnIndex="1">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <TextField fx:id="removeCaminhoEdgeTextField" layoutX="10.0" layoutY="208.0" promptText="0;1" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="60.0" left="60.0" right="60.0" top="60.0" />
+                                                   </GridPane.margin>
+                                                   <effect>
+                                                      <InnerShadow />
+                                                   </effect>
+                                                </TextField>
+                                                <Button layoutX="110.0" layoutY="352.0" mnemonicParsing="false" onAction="#handleRemoveEdgeCaminhoAction" prefHeight="68.0" prefWidth="151.0" text="Remove" textFill="#141414" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                                   </GridPane.margin>
+                                                   <effect>
+                                                      <DropShadow />
+                                                   </effect>
+                                                </Button>
+                                                <Label alignment="CENTER" prefHeight="36.0" prefWidth="267.0" text="Adicionar nó" textFill="#1e1e1e" GridPane.columnIndex="2">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <Label alignment="CENTER" prefHeight="36.0" prefWidth="267.0" text="Adicionar ligação" textFill="#1b1a1a" GridPane.columnIndex="3">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <TextField fx:id="addCaminhoEdgeTextField" promptText="0;1;0.2" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="60.0" left="60.0" right="60.0" top="60.0" />
+                                                   </GridPane.margin>
+                                                   <effect>
+                                                      <InnerShadow />
+                                                   </effect></TextField>
+                                                <Button mnemonicParsing="false" onAction="#handleAddEdgeCaminhoAction" prefHeight="68.0" prefWidth="151.0" text="Add" textFill="#1b1a1a" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                                   </GridPane.margin>
+                                                   <effect>
+                                                      <DropShadow />
+                                                   </effect>
+                                                </Button>
+                                                <Button mnemonicParsing="false" onAction="#handleAddCaminhoAction" prefHeight="68.0" prefWidth="151.0" text="Add" textFill="#141414" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                                   </GridPane.margin>
+                                                   <effect>
+                                                      <DropShadow />
+                                                   </effect>
+                                                </Button>
+                                             </children>
+                                             <opaqueInsets>
+                                                <Insets top="20.0" />
+                                             </opaqueInsets>
+                                          </GridPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Amizades">
+                           <content>
+                              <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="Graph">
+                                       <content>
+                                          <Group fx:id="graphGroupAmizades" />
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Manual">
+                                       <content>
+                                          <GridPane>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <TextField fx:id="verticesNumberFieldAmizades" promptText="3" GridPane.columnIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </GridPane.margin>
+                                                   <effect>
+                                                      <InnerShadow />
+                                                   </effect></TextField>
+                                                <TextArea fx:id="edgesNumberFieldAmizades" prefHeight="200.0" prefWidth="200.0" promptText="1;2;0.22" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </GridPane.margin>
+                                                   <effect>
+                                                      <InnerShadow />
+                                                   </effect></TextArea>
+                                                <Button mnemonicParsing="false" onAction="#handleCreateButtonAmizadesAction" prefHeight="68.0" prefWidth="151.0" text="Create" textFill="#222120" GridPane.rowIndex="2">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="100.0" left="100.0" right="100.0" top="100.0" />
+                                                   </GridPane.margin>
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                   <effect>
+                                                      <DropShadow />
+                                                   </effect>
+                                                </Button>
+                                                <Label text="Número vértices" textFill="#1e1e1e">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets bottom="100.0" left="100.0" right="100.0" top="100.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <Label text="Edges" textFill="#141414" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets bottom="100.0" left="100.0" right="100.0" top="100.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                             </children>
+                                          </GridPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Editar">
+                                       <content>
+                                          <GridPane>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <TextField fx:id="removeAmizadeNodeTextField" promptText="3" GridPane.rowIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="60.0" left="60.0" right="60.0" top="60.0" />
+                                                   </GridPane.margin>
+                                                   <effect>
+                                                      <InnerShadow />
+                                                   </effect>
+                                                </TextField>
+                                                <Button mnemonicParsing="false" onAction="#handleRemoveAmizadeAction" prefHeight="68.0" prefWidth="151.0" text="Remove" textFill="#171717" GridPane.rowIndex="2">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                                   </GridPane.margin>
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                   <effect>
+                                                      <DropShadow />
+                                                   </effect>
+                                                </Button>
+                                                <Label alignment="CENTER" prefHeight="36.0" prefWidth="206.0" text="Remover nó" textFill="#252424">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <Label alignment="CENTER" prefHeight="36.0" prefWidth="205.0" text="Remover ligação" textFill="#1b1a1a" GridPane.columnIndex="1">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <TextField fx:id="removeAmizadeEdgeTextField" layoutX="10.0" layoutY="208.0" promptText="0;1" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="60.0" left="60.0" right="60.0" top="60.0" />
+                                                   </GridPane.margin>
+                                                   <effect>
+                                                      <InnerShadow />
+                                                   </effect>
+                                                </TextField>
+                                                <Button layoutX="110.0" layoutY="352.0" mnemonicParsing="false" onAction="#handleRemoveEdgeAmizadeAction" prefHeight="68.0" prefWidth="151.0" text="Remove" textFill="#1b1a1a" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                                   </GridPane.margin>
+                                                   <effect>
+                                                      <DropShadow />
+                                                   </effect>
+                                                </Button>
+                                                <Label alignment="CENTER" layoutX="10.0" layoutY="65.0" text="Adicionar Ligação" textFill="#141413" GridPane.columnIndex="3">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <Label alignment="CENTER" layoutX="10.0" layoutY="65.0" prefHeight="36.0" prefWidth="203.0" text="Adicionar nó" textFill="#282727" GridPane.columnIndex="2">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <TextField fx:id="addAmizadeEdgeTextField" layoutX="285.0" layoutY="208.0" promptText="0;1;0.2" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="60.0" left="60.0" right="60.0" top="60.0" />
+                                                   </GridPane.margin>
+                                                   <effect>
+                                                      <InnerShadow />
+                                                   </effect></TextField>
+                                                <Button layoutX="10.0" layoutY="337.0" mnemonicParsing="false" onAction="#handleAddAmizadeAction" prefHeight="68.0" prefWidth="151.0" text="Add" textFill="#1b1a1a" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                                   </GridPane.margin>
+                                                   <effect>
+                                                      <DropShadow />
+                                                   </effect>
+                                                </Button>
+                                                <Button layoutX="210.0" layoutY="337.0" mnemonicParsing="false" onAction="#handleAddEdgeAmizadeAction" prefHeight="68.0" prefWidth="151.0" text="Add" textFill="#1e1d1d" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                                   </GridPane.margin>
+                                                   <effect>
+                                                      <DropShadow />
+                                                   </effect>
+                                                </Button>
+                                             </children>
+                                             <opaqueInsets>
+                                                <Insets top="20.0" />
+                                             </opaqueInsets>
+                                          </GridPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                           </content>
+                        </Tab>
+                        <Tab text="LigProfEmp">
+                           <content>
+                              <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="Graph">
+                                       <content>
+                                          <Group fx:id="graphGroupLigProfEmp" />
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Manual">
+                                       <content>
+                                          <GridPane>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <TextField fx:id="verticesNumberFieldLigProfEmp" promptText="3" GridPane.columnIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </GridPane.margin>
+                                                   <effect>
+                                                      <InnerShadow />
+                                                   </effect>
+                                                </TextField>
+                                                <TextArea fx:id="edgesNumberFieldLigProfEmp" prefHeight="200.0" prefWidth="200.0" promptText="0;1" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </GridPane.margin>
+                                                   <effect>
+                                                      <InnerShadow />
+                                                   </effect>
+                                                </TextArea>
+                                                <Button mnemonicParsing="false" onAction="#handleCreateLigProfEmpButtonAction" prefHeight="68.0" prefWidth="151.0" text="Create" textFill="#111111" GridPane.rowIndex="2">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="100.0" left="100.0" right="100.0" top="100.0" />
+                                                   </GridPane.margin>
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                   <effect>
+                                                      <DropShadow />
+                                                   </effect>
+                                                </Button>
+                                                <Label text="Número vértices" textFill="#1e1e1d">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets bottom="100.0" left="100.0" right="100.0" top="100.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <Label text="Edges" textFill="#0a0a0a" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets bottom="100.0" left="100.0" right="100.0" top="100.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                             </children>
+                                          </GridPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Editar">
+                                       <content>
+                                          <GridPane>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <TextField fx:id="removeLigEmpProfNodeTextField" promptText="3" GridPane.rowIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="60.0" left="60.0" right="60.0" top="60.0" />
+                                                   </GridPane.margin>
+                                                   <effect>
+                                                      <InnerShadow />
+                                                   </effect>
+                                                </TextField>
+                                                <Button mnemonicParsing="false" onAction="#handleRemoveLigEmpProfAction" prefHeight="68.0" prefWidth="151.0" text="Remove" textFill="#1b1b1a" GridPane.rowIndex="2">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                                   </GridPane.margin>
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                   <effect>
+                                                      <DropShadow />
+                                                   </effect>
+                                                </Button>
+                                                <Label alignment="CENTER" prefHeight="36.0" prefWidth="207.0" text="Remover nó" textFill="#282827">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <Label alignment="CENTER" prefHeight="36.0" prefWidth="209.0" text="Remover ligação" textFill="#171717" GridPane.columnIndex="1">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <TextField fx:id="removeLigProfEmpEdgeTextField" layoutX="10.0" layoutY="208.0" promptText="0;1" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="60.0" left="60.0" right="60.0" top="60.0" />
+                                                   </GridPane.margin>
+                                                   <effect>
+                                                      <InnerShadow />
+                                                   </effect>
+                                                </TextField>
+                                                <Button layoutX="110.0" layoutY="352.0" mnemonicParsing="false" onAction="#handleRemoveLigEmpEdgeProfAction" prefHeight="68.0" prefWidth="151.0" text="Remove" textFill="#171717" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                                   </GridPane.margin>
+                                                   <effect>
+                                                      <DropShadow />
+                                                   </effect>
+                                                </Button>
+                                                <Label alignment="CENTER" layoutX="10.0" layoutY="65.0" prefHeight="36.0" prefWidth="205.0" text="Adicionar nó" textFill="#171717" GridPane.columnIndex="2">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label alignment="CENTER" layoutX="210.0" layoutY="65.0" prefHeight="36.0" prefWidth="221.0" text="Adicionar ligação" textFill="#141414" GridPane.columnIndex="3">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="addLigProfEmpEdgeTextField" layoutX="285.0" layoutY="208.0" promptText="0;1" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="60.0" left="60.0" right="60.0" top="60.0" />
+                                                   </GridPane.margin>
+                                                   <effect>
+                                                      <InnerShadow />
+                                                   </effect>
+                                                </TextField>
+                                                <Button layoutX="10.0" layoutY="337.0" mnemonicParsing="false" onAction="#handleAddLigEmpProfAction" prefHeight="68.0" prefWidth="151.0" text="Add" textFill="#141414" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                                   </GridPane.margin>
+                                                   <effect>
+                                                      <DropShadow />
+                                                   </effect>
+                                                </Button>
+                                                <Button layoutX="210.0" layoutY="337.0" mnemonicParsing="false" onAction="#handleAddLigEmpEdgeProfAction" prefHeight="68.0" prefWidth="151.0" text="Add" textFill="#171717" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                                   </GridPane.margin>
+                                                   <effect>
+                                                      <DropShadow />
+                                                   </effect>
+                                                </Button>
+                                             </children>
+                                             <opaqueInsets>
+                                                <Insets top="20.0" />
+                                             </opaqueInsets>
+                                          </GridPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+               </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Label fx:id="labelAviso" alignment="CENTER_RIGHT" layoutX="163.0" layoutY="-2.0" prefHeight="39.0" prefWidth="630.0" textFill="RED" />
+   </children>
+</AnchorPane>

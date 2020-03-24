@@ -1,0 +1,6 @@
+primeironome;ultimonome;email;idprofissional;areasdeinteresse1,,;nomemepresa;tipoempresa;idempresa;xempresa;yempresa;xprofissional;yprofissional;nparticenc:encnome:idenco:locencx:locency:nomeempenc:tipoempenc:idempenc:locempencx:locempency:dia:mes:ano:hora:minuto,....,...;nomempseguidora:tipoempseguidora:idempseguidora:locempseguidorax:locempseguidoray,,....,..;nomempaseguir:tipoempaseguir:idempaseguir:locempaseguirx:locempaseguiry....,,.;nomempantiga:tipoempantiga:idempantiga:locempantigax:locempantigay,..,;
+Luis;Aguiar;ola;0;Informatica,SQL,java,;null;null;null;null;null;2.0;12.0;1:evento:0:2.0:12.0:google:software:0:2.0:12.0:19:5:2016:2:58,1:convencao:1:23.0:2.0:google:software:0:2.0:12.0:22:4:2014:5:3,;google:software:0:2.0:12.0:Microsoft:disto:1:2.0:3.0:;null;Microsoft:disto:1:2.0:3.0,;
+Zezinho;Couves;fds@gmail.com;1;Informatica,background,C++,;Microsoft;disto;1;2.0;3.0;12.0;3.0;2:reuniao:2:12.0:3.0:Microsoft:disto:1:2.0:3.0:11:12:2016:12:34,;Microsoft:disto:1:2.0:3.0:;Microsoft:disto:1:2.0:3.0,;google:software:0:2.0:12.0,;
+Pedro;Alemeida;123@gmail.com;2;;google;software;0;2.0;12.0;2.0;3.0;2:reuniao:2:12.0:3.0:Microsoft:disto:1:2.0:3.0:11:12:2016:12:34,;null;null;null;
+Antonio;Fernando;123@gmail.com;3;;blip;tecnologia;2;12.0;3.0;2.0;3.0;null;null;null;null;
+Joe;Berardo;wikileaks@gmail.com;4;;google;software;0;2.0;12.0;2.0;3.0;null;null;null;null;

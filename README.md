@@ -2,6 +2,7 @@
 
 - this project is a java application written in portuguese
 - includes javafx graphical part ( show of graphs entities and weights)
+- uses "algorithms" book code in part of the development 
 
 ## What does the project do ?
 - search on graphs and spanning trees
